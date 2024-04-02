@@ -1,0 +1,26 @@
+{
+  "name": "eslint-stylistic-example",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "format": "eslint --fix .",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "solid-js": "^1.8.16"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^1.7.0",
+    "@stylistic/eslint-plugin-js": "^1.7.0",
+    "@stylistic/eslint-plugin-plus": "^1.7.0",
+    "@stylistic/eslint-plugin-ts": "^1.7.0",
+    "@typescript-eslint/parser": "^7.5.0",
+    "typescript": "^5.4.3",
+    "vite": "^5.2.7",
+    "vite-plugin-solid": "^2.10.2"
+  }
+}
