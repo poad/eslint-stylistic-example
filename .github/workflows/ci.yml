@@ -18,7 +18,8 @@ jobs:
 
     - uses: oven-sh/setup-bun@v1
 
-    - name: Build Next.js app
+    - name: Build app
       run: |
         bun install
+        bun lint
         bun run build
