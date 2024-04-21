@@ -19,9 +19,9 @@
     "@stylistic/eslint-plugin-js": "^1.7.2",
     "@stylistic/eslint-plugin-plus": "^1.7.2",
     "@stylistic/eslint-plugin-ts": "^1.7.2",
-    "eslint": "^9.0.0",
+    "eslint": "^9.1.0",
     "typescript": "^5.4.5",
-    "vite": "^5.2.9",
+    "vite": "^5.2.10",
     "vite-plugin-solid": "^2.10.2"
   }
 }
