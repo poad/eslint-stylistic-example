@@ -15,10 +15,10 @@
     "typescript-eslint": "^7.8.0"
   },
   "devDependencies": {
-    "@stylistic/eslint-plugin": "^1.7.2",
-    "@stylistic/eslint-plugin-js": "^1.7.2",
-    "@stylistic/eslint-plugin-plus": "^1.7.2",
-    "@stylistic/eslint-plugin-ts": "^1.7.2",
+    "@stylistic/eslint-plugin": "^1.8.0",
+    "@stylistic/eslint-plugin-js": "^1.8.0",
+    "@stylistic/eslint-plugin-plus": "^1.8.0",
+    "@stylistic/eslint-plugin-ts": "^1.8.0",
     "eslint": "^9.1.1",
     "typescript": "^5.4.5",
     "vite": "^5.2.10",
