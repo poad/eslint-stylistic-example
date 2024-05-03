@@ -21,7 +21,7 @@
     "@stylistic/eslint-plugin-ts": "^1.8.0",
     "eslint": "^9.1.1",
     "typescript": "^5.4.5",
-    "vite": "^5.2.10",
+    "vite": "^5.2.11",
     "vite-plugin-solid": "^2.10.2"
   },
   "packageManager": "pnpm@9.0.6+sha512.f6d863130973207cb7a336d6b439a242a26ac8068077df530d6a86069419853dc1ffe64029ec594a9c505a3a410d19643c870aba6776330f5cfddcf10a9c1617"
