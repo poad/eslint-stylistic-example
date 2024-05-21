@@ -34,6 +34,7 @@ export default tseslint.config(
       '@stylistic/semi': 'error',
       '@stylistic/ts/indent': ['error', 2],
       '@stylistic/jsx/jsx-indent': ['error', 2],
+      "comma-dangle": ["error", "always"],
     },
   },
 );
