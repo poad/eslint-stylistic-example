@@ -17,14 +17,13 @@ export default tseslint.config(
       'src/stories',
       '**/*.css',
       'node_modules/**/*',
-      './.next/*',
       'out',
-      '.storybook',
+      'cdk.out',
       'dist',
     ],
   },
   {
-    files: ['src/*.{ts,tsx}', 'src/**/*.{ts,tsx}'],
+    files: ['src/*.ts', 'src/**/*.ts'],
     plugins: {
       '@stylistic': stylistic,
       '@stylistic/ts': stylisticTs,
@@ -34,7 +33,8 @@ export default tseslint.config(
       '@stylistic/semi': 'error',
       '@stylistic/ts/indent': ['error', 2],
       '@stylistic/jsx/jsx-indent': ['error', 2],
-      "comma-dangle": ["error", "always"],
+      'comma-dangle': ['error', 'always'],
+      'arrow-parens': ['error', 'always'],
     },
   },
 );
