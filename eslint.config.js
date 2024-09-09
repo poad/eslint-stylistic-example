@@ -5,13 +5,18 @@ import stylistic from '@stylistic/eslint-plugin';
 import stylisticTs from '@stylistic/eslint-plugin-ts';
 import stylisticJsx from '@stylistic/eslint-plugin-jsx';
 import tseslint from 'typescript-eslint';
-// @ts-ignore
+// @ts-expect-error ignore type errors
 import importPlugin from 'eslint-plugin-import';
+
+import pluginPromise from 'eslint-plugin-promise'
+
+import solid from 'eslint-plugin-solid';
 
 export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
+  pluginPromise.configs['flat/recommended'],
   {
     ignores: [
       '**/*.d.ts',
@@ -20,13 +25,11 @@ export default tseslint.config(
       'src/stories',
       '**/*.css',
       'node_modules/**/*',
-      'out',
-      'cdk.out',
       'dist',
     ],
   },
   {
-    files: ['src/*.ts', 'src/**/*.ts'],
+    files: ['src/**/*.{ts,tsx}'],
     ...importPlugin.flatConfigs.recommended,
     ...importPlugin.flatConfigs.typescript,
     languageOptions: {
@@ -34,25 +37,30 @@ export default tseslint.config(
       ecmaVersion: 'latest',
       sourceType: 'module',
     },
-    settings: {
-      'import/resolver': {
-        typescript: true,
-        node: true,
-      },
-    },
     plugins: {
       '@stylistic': stylistic,
       '@stylistic/ts': stylisticTs,
       '@stylistic/jsx': stylisticJsx,
+      solid,
+    },
+    settings: {
+      'import/parsers': {
+        espree: ['.js', '.cjs', '.mjs'],
+        '@typescript-eslint/parser': ['.ts'],
+      },
+      'import/internal-regex': '^~/',
+      'import/resolver': {
+        node: true,
+        typescript: true,
+      },
     },
     rules: {
       '@stylistic/semi': 'error',
       '@stylistic/ts/indent': ['error', 2],
       '@stylistic/jsx/jsx-indent': ['error', 2],
-      'comma-dangle': ['error', 'always-multiline'],
-      'arrow-parens': ['error', 'always'],
-      'indent': ['error', 2],
-      'quotes': ['error', 'single'],
-    },
+      "comma-dangle": ["error", "always-multiline"],
+      "quotes": ["error", "single"],
+      semi: ["error", "always"],
+    }
   },
 );
