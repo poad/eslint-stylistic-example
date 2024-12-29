@@ -21,5 +21,5 @@ jobs:
     - name: Build app
       run: |
         bun install
-        bun lint
-        bun run build
+        bun run --bun lint
+        bun run --bun build
