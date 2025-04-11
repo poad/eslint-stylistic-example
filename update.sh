@@ -13,7 +13,7 @@ if [ $result -ne 0 ]; then
   exit $result
 fi
 pwd
-npx corepack use pnpm@latest && rm -rf node_modules && pnpm up -r && rm -rf node_modules pnpm-lock.yaml && bun i && bun run lint-fix && bun run build
+npx pnpm@latest self-update && rm -rf node_modules && pnpm up -r && rm -rf node_modules pnpm-lock.yaml && bun i && bun run lint-fix && bun run build
 result=$?
 if [ $result -ne 0 ]; then
   cd "${CUR}" || exit
