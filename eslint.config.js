@@ -52,12 +52,10 @@ export default tseslint.config(
       },
     },
     rules: {
-      '@stylistic/semi': 'error',
-      '@stylistic/ts/indent': ['error', 2],
-      '@stylistic/jsx/jsx-indent': ['error', 2],
-      "comma-dangle": ["error", "always-multiline"],
-      "quotes": ["error", "single"],
-      semi: ["error", "always"],
+      '@stylistic/semi': ['error', 'always'],
+      // '@stylistic/indent': ['error', 2],
+      '@stylistic/comma-dangle': ['error', 'always-multiline'],
+      '@stylistic/quotes': ['error', 'single'],
     }
   },
 );
