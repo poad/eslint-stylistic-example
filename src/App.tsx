@@ -1,5 +1,6 @@
 import { createSignal } from 'solid-js';
 import solidLogo from './assets/solid.svg';
+// eslint-disable-next-line import/no-unresolved
 import viteLogo from '/vite.svg';
 import './App.css';
 
