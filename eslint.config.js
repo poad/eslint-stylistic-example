@@ -39,7 +39,30 @@ export default tseslint.config(
   ...tseslint.configs.stylistic,
   pluginPromise.configs['flat/recommended'],
   {
-    files: ['src/**/*.{ts,tsx}'],
+    plugins: {
+      '@stylistic': stylistic,
+    },
+    rules: {
+      '@stylistic/semi': ['error', 'always'],
+      '@stylistic/indent': ['error', 2],
+      '@stylistic/comma-dangle': ['error', 'always-multiline'],
+      '@stylistic/arrow-parens': ['error', 'always'],
+      '@stylistic/quotes': ['error', 'single'],
+    },
+  },
+  {
+    files: ['*.js'],
+    plugins: {
+      '@stylistic/js': stylistic,
+    },
+  },
+  {
+    files: ['src/**/*.ts', 'src/**/*.tsx'],
+    plugins: {
+      '@stylistic/ts': stylistic,
+      '@stylistic/jsx': stylistic,
+    },
+    extends: [importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.typescript],
     languageOptions: {
       parser: tseslint.parser,
       ecmaVersion: 'latest',
@@ -49,18 +72,13 @@ export default tseslint.config(
         tsconfigRootDir: __dirname,
       },
     },
-    plugins: {
-      '@stylistic': stylistic,
-      '@stylistic/ts': stylistic,
-      '@stylistic/jsx': stylistic,
-      solid,
+    settings: {
+      'import/resolver': {
+        // You will also need to install and configure the TypeScript resolver
+        // See also https://github.com/import-js/eslint-import-resolver-typescript#configuration
+        'typescript': true,
+        'node': true,
+      },
     },
-    extends: [importPlugin.flatConfigs.recommended, importPlugin.flatConfigs.typescript],
-    rules: {
-      '@stylistic/semi': ['error', 'always'],
-      '@stylistic/indent': ['error', 2],
-      '@stylistic/comma-dangle': ['error', 'always-multiline'],
-      '@stylistic/quotes': ['error', 'single'],
-    }
   },
 );
