@@ -29,5 +29,5 @@
     "vite": "^7.1.5",
     "vite-plugin-solid": "^2.11.8"
   },
-  "packageManager": "pnpm@10.16.0"
+  "packageManager": "pnpm@10.16.1"
 }
